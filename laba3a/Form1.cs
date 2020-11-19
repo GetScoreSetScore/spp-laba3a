@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.ServiceModel.Syndication;
+using System.Threading;
+
 namespace laba3a
 {
     public partial class Form1 : Form
@@ -30,7 +32,7 @@ namespace laba3a
                 webBrowser1.ScriptErrorsSuppressed = true;
                 foreach (SyndicationItem item in feed.Items)
                 {
-                    Summaries.Add(item.Summary?.Text??"");
+                    //Summaries.Add(item.Summary?.Text??"");
                     Links.Add(item.Links[0].Uri.ToString());
                     listBox1.Items.Add(item.Title.Text);
                 }
